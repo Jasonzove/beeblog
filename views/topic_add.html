@@ -1,0 +1,49 @@
+
+{{template "header"}}
+    <title>添加文章 - 我的 beego 博客</title>
+  </head>
+  <body>
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        {{template "navbar" .}}
+      </div>  
+    </div>
+    <div class="container">
+      <div style="margin-top:10%;"></div>
+      <h1>添加文章</h1>
+      <!-- 添加一个表单:form  action="/topic" 是将请求添加到topic-->
+      <!-- 整个文章的操作过程中 只有两种操作需要进行post：添加文章和修改文章  而且区别并不是很大都是在新增或者覆盖文章的内容 所以都可以提交到TopicController中的post方法中进行处理-->
+      <form method="post" action="/topic" enctype="multipart/form-data">
+        <div class="form-group">
+          <label>文章标题：</label>
+          <input type="text" name="title" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>文章分类：</label>
+          <input type="text" class="form-control" name="category">
+        </div>
+
+        <div class="form-group">
+          <label>文章标签：</label>
+          <input type="text" class="form-control" name="label">
+        </div>
+
+        <div class="form-group">
+          <label>文章内容：</label>
+          <textarea name="content" cols="30" rows="10" class="form-control"></textarea>
+        </div>
+
+         <div class="form-group">
+          <label>文章附件：</label>
+          <input type="file" class="form-control" name="attachment">
+        </div>
+
+        <button type="sumbit" class="btn btn-default">添加文章</button>
+      </form>
+
+      
+    </div>
+    <script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+  </body>
+</html>
